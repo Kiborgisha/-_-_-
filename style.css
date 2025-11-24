@@ -1,0 +1,821 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* Контейнер бокового меню */
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Кнопка "Меню" */
+.sidebar-toggle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6655FF;
+    cursor: pointer;
+    padding: 8px 16px;
+    border: 1px solid #6655FF;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: background 0.2s;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-toggle:hover {
+    background-color: #f0f0ff;
+}
+
+.sidebar-nav {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+    padding: 60px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar-toggle:hover + .sidebar-nav,
+.sidebar-nav:hover {
+    right: 0;
+}
+
+
+.sidebar-nav a {
+    font-size: 1.1rem;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color 0.2s;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.sidebar-nav a:last-child {
+    border-bottom: none;
+}
+
+.sidebar-nav a:hover {
+    color: #6655FF;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    background-color: #fafafa;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* отступ между элементами, если их несколько */
+}
+
+.header-placeholder {
+    font-size: 1.1rem;
+    color: #6655FF;
+    font-weight: 500;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #000;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 80%;
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.btn {
+    align-items: center;
+    margin-bottom: 20px;
+    
+    padding: 12px 24px;
+    background-color: #6655FF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    z-index: 10; /* чтобы кнопка была поверх изображения */
+}
+
+.btn:hover {
+    background-color: #5544DD;
+}
+
+.services {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: 700;
+}
+
+.services .subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.services-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+
+.service-item:last-child {
+    border-bottom: none;
+}
+
+.service-desc {
+    flex: 1;
+    text-align: left;
+    margin-right: 20px;
+    color: #333;
+}
+
+.service-price {
+    color: #6655FF;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.disclaimer {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 1.4;
+}
+
+.disclaimer a {
+    color: #6655FF;
+    text-decoration: underline;
+}
+
+.disclaimer a:hover {
+    color: #5544DD;
+}
+
+.advantages {
+    padding: 60px 20px;
+    background-color: #f8f8ff; 
+    text-align: center;
+}
+
+.advantages-subtitle {
+    font-size: 1.1rem;
+    color: #6655FF;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.advantages-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #000;
+    font-weight: 700;
+}
+
+.advantages-desc {
+    font-size: 1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.advantage-item {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.advantage-item:hover {
+    transform: translateY(-5px);
+}
+
+.advantage-icon {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border: 2px solid #6655FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #6655FF;
+    margin: 0 auto 15px;
+    font-weight: bold;
+}
+
+.advantage-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: 600;
+}
+
+.advantage-item p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+/* Блок "Почему выбирают Перспектива ТЦ" */
+.why-choose {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.why-subtitle {
+    font-size: 1.1rem;
+    color: #6655FF;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.why-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #000;
+    font-weight: 700;
+}
+
+.why-desc {
+    font-size: 1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.why-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.why-item:hover {
+    transform: translateY(-5px);
+}
+
+.why-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    filter: brightness(0.7); /* затемнение изображения */
+}
+
+.why-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    text-align: left;
+}
+
+.why-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.why-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+/* Блок "Отзывы наших клиентов" */
+.testimonials {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: 700;
+}
+
+.testimonial-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 2px solid #eee;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: #000;
+    font-size: 1rem;
+}
+
+.testimonial-position {
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: 5px;
+}
+/* Блок "Контакты" — карта на всю ширину */
+.contacts-fullwidth {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.map-fullwidth {
+    width: 100%;
+    height: 40vh; 
+    z-index: 1;
+}
+
+.map-fullwidth iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.contacts-overlay {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 300px;
+    z-index: 2;
+    text-align: left;
+}
+
+.contacts-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #000;
+    font-weight: 700;
+}
+
+.contacts-overlay p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contacts-overlay a {
+    color: #6655FF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contacts-overlay a:hover {
+    text-decoration: underline;
+}
+/* Футер сайта */
+.footer {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    border-top: 1px solid #eee;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-left h3 {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.footer-center ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-center a {
+    font-size: 0.95rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-center a:hover {
+    color: #6655FF;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-contact p {
+    font-size: 0.95rem;
+    color: #333;
+    margin: 0;
+}
+
+.footer-contact strong {
+    color: #6655FF;
+    font-weight: 500;
+}
+
+.footer-contact a {
+    color: #6655FF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+@media (max-width: 1024px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+        .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contacts-content {
+        flex-direction: column;
+    }
+
+    .contacts-info {
+        flex: 1;
+        width: 100%;
+    }
+        .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-center ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+@media (max-width: 768px) {
+        .testimonials {
+        padding: 40px 20px;
+    }
+
+    .testimonials h2 {
+        font-size: 1.8rem;
+    }
+
+    .testimonial-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .testimonial-text {
+        font-size: 0.95rem;
+    }
+
+    .testimonial-author {
+        font-size: 0.95rem;
+    }
+
+    .testimonial-position {
+        font-size: 0.85rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        top: 55%;
+        left: 35%;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+       .advantages {
+        padding: 40px 20px;
+    }
+
+    .advantages-title {
+        font-size: 1.8rem;
+    }
+
+    .advantages-desc {
+        font-size: 0.9rem;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .advantage-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .advantage-item h4 {
+        font-size: 1rem;
+    }
+
+    .advantage-item p {
+        font-size: 0.85rem;
+    }
+        .why-choose {
+        padding: 40px 20px;
+    }
+
+    .why-title {
+        font-size: 1.8rem;
+    }
+
+    .why-desc {
+        font-size: 0.9rem;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-image {
+        height: 200px;
+    }
+
+    .why-content {
+        padding: 15px;
+    }
+    .contacts-fullwidth {
+        height: auto;
+    }
+
+    .map-fullwidth {
+        height: 300px;
+    }
+
+    .contacts-overlay {
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .contacts-overlay h3 {
+        font-size: 1.3rem;
+    }
+
+    .contacts-overlay p {
+        font-size: 0.95rem;
+    }
+        .footer {
+        padding: 30px 20px;
+    }
+
+    .footer-left h3 {
+        font-size: 1.3rem;
+    }
+
+    .footer-left p {
+        font-size: 0.85rem;
+    }
+
+    .footer-center a,
+    .footer-contact p,
+    .footer-contact strong {
+        font-size: 0.9rem;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        top: 50%;
+        left: 30%;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+
+    .disclaimer {
+        font-size: 0.8rem;
+    }
+}
