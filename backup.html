@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+    <div class="container">
+        <a href="#" class="logo">
+            <img src="img/Logo.png" alt="Перспектива ТЦ" class="logo-image">
+            <span class="logo-text">Перспектива ТЦ</span>
+            <a href="index.html">Информация</a>
+        </a>
+    </div>
+    </header>
+     <section class="contact-form-section">
+        <div class="container">
+            <h2>Обратная связь</h2>
+            <p class="form-subtitle">Оставьте заявку — мы свяжемся с вами в ближайшее время</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">ФИО</label>
+                    <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Электронная почта</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Цель обращения</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Выберите тему</option>
+                        <option value="repair">Ремонт домофона</option>
+                        <option value="installation">Установка видеонаблюдения</option>
+                        <option value="consultation">Консультация</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Дополнительно (необязательно)</label>
+                    <textarea id="message" name="message" placeholder="Расскажите подробнее, если нужно"></textarea>
+                </div>
+                <button type="submit" class="btn">Отправить</button>
+                <p class="form-note">
+                    Оставляя заявку, вы соглашаетесь на <a href="#">обработку персональных данных</a>
+                </p>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
