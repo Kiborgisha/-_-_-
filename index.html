@@ -5,19 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Перспектива ТЦ — эксперт в безопасности</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <!-- Шапка сайта -->
+    <button class="feedback-btn" aria-label="Открыть форму обратной связи">
+    📩
+    </button>
+    <div class="feedback-modal" id="feedbackModal">
+        <div class="feedback-modal-content">
+            <button class="feedback-close" aria-label="Закрыть форму">&times;</button>
+            <h3 class="feedback_modal_h3">Обратная связь</h3>
+            <form class="feedback-form">
+                <div class="form-group">
+                    <input type="text" placeholder="ФИО" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email *" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Телефон *" required>
+                </div>
+               <div class="form-group">
+                    <select id="subject" name="subject" required>
+                        <option value="">Цель обращения</option>
+                        <option value="repair">Ремонт домофона</option>
+                        <option value="video">Видеонаблюдение</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="other-field-container" style="display: none;">
+                    <label for="other-details">Уточните ваш запрос</label>
+                    <textarea id="other-details" name="other-details" placeholder="Опишите, что именно вам нужно"></textarea>
+                </div>
+                <button type="submit" class="btn">Отправить</button>
+                <p class="form-note">Оставляя заявку, вы соглашаетесь на <a href="#">обработку персональных данных</a></p>
+            </form>
+        </div>
+    </div>
     <header class="header">
     <div class="container">
         <a href="#" class="logo">
             <img src="img/Logo.png" alt="Перспектива ТЦ" class="logo-image">
             <span class="logo-text">Перспектива ТЦ</span>
-            <a href="backup.html">Обратная связь</a>
         </a>
     </div>
     </header>
-    <!-- Боковая навигация -->
+
     <div class="sidebar-container">
         <div class="sidebar-toggle" aria-label="Открыть меню">
             Меню
@@ -30,7 +65,6 @@
             <a href="#contacts">Контакты</a>
         </nav>
     </div>    
-    <!-- Главный баннер -->
     <section class="hero" id="hero">
         <div class="container">
             <h1>Перспектива ТЦ — эксперт в безопасности</h1>
@@ -42,6 +76,36 @@
             </div>
         </div>
     </section>
+    
+    <section class="news-section">
+        <div class="container">
+            <h2>Новости компании</h2>
+            <p class="news-subtitle">Следите за обновлениями — рассказываем о новых услугах, акциях и проектах</p>
+            <div class="news-grid">
+                <!-- Новость 1 -->
+                <article class="news-card" data-news="1">
+                    <div class="news-date">10 декабря 2025</div>
+                    <h3>Новый сервис: удалённая диагностика домофонов</h3>
+                    <p>Теперь мы можем проверить работоспособность вашей системы без выезда — быстро и бесплатно.</p>
+                    <button class="news-read-btn">Читать полностью</button>
+                </article>
+
+                <!-- Новость 2 -->
+                <article class="news-card" data-news="2">
+                    <div class="news-date">5 декабря 2025</div>
+                    <h3>Скидка 15% на установку видеонаблюдения</h3>
+                    <p>До конца месяца — выгодные условия на комплекты для дома и бизнеса.</p>
+                    <button class="news-read-btn">Читать полностью</button>
+                </article>
+            </div>
+        </div>
+    </section>
+    <div class="modal-overlay" id="newsModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div id="modalNewsContent"></div>
+        </div>
+    </div>
     <section class="advantages" id="advantages">
         <div class="container">
             <h2 class="advantages-title">Наши ключевые преимущества</h2>

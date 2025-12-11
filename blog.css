@@ -1,0 +1,149 @@
+/* Блок новостей — по центру */
+.news-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center; /* центрируем заголовок и подзаголовок */
+}
+
+.news-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #000;
+    font-weight: 700;
+}
+
+.news-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Центрированный список новостей */
+.news-list-centered {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Центрированная карточка */
+.news-card-centered {
+    background: #f9f9ff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center; /* всё содержимое по центру */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card-centered:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.news-card-centered .news-date {
+    font-size: 0.85rem;
+    color: #6655FF;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.news-card-centered h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.news-card-centered p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news-read-btn {
+    background: #6655FF;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.news-read-btn:hover {
+    background: #5544DD;
+}
+
+/* Модальное окно — остаётся прежним */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 3000;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 30px;
+    position: relative;
+    text-align: left; /* внутри модалки — текст по левому краю */
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-news-title {
+    font-size: 1.6rem;
+    margin: 0 0 15px;
+    color: #000;
+}
+
+.modal-news-date {
+    color: #6655FF;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.modal-news-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
